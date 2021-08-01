@@ -25,6 +25,7 @@
     "dotenv": "^8.2.0",
     "fast-csv": "^4.3.1",
     "handlebars": "^4.7.7",
+    "http": "0.0.1-security",
     "iconv-lite": "^0.6.2",
     "json2csv": "^5.0.1",
     "line-notify-nodejs": "^1.0.0",
