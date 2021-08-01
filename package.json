@@ -19,6 +19,7 @@
     "aws-cli": "0.0.2",
     "aws-sdk": "^2.859.0",
     "axios": "^0.21.1",
+    "axios-retry": "^3.1.9",
     "convert-excel-to-json": "^1.7.0",
     "csvtojson": "^2.0.10",
     "dotenv": "^8.2.0",

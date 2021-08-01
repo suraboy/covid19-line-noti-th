@@ -1,6 +1,8 @@
 const axios = require('axios');
+const axiosRetry = require('axios-retry');
 
 module.exports.curlGet = async (endpoint, config) => {
+    axiosRetry(axios, { retries: 3 });
     try {
         return await axios.get(`${endpoint}`, config)
             .then(function (response) {
