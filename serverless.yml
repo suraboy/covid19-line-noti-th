@@ -1,0 +1,56 @@
+# Welcome to Serverless!
+#
+# This file is the main config file for your service.
+# It's very minimal at this point and uses default values.
+# You can always add more config options for more control.
+# We've included some commented out config examples here.
+# Just uncomment any of them to get that config option.
+#
+# For full config options, check the docs:
+#    docs.serverless.com
+#
+# Happy Coding!
+
+service: nexter-npay-lambda
+frameworkVersion: '2'
+useDotenv: true
+plugins:
+  - serverless-dotenv-plugin
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stackName: nexter-npay-lambda-stack-${env:STAGE}
+  lambdaHashingVersion: 20201221
+  stage: ${env:STAGE}
+  region: ap-southeast-1
+  environment:
+    COVID19_API: ${env:COVID19_API}
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - S3:*
+            - ec2:*
+            - lambda:*
+            - kms:GenerateDataKey
+            - kms:Encrypt
+            - kms:Decrypt
+          Resource: "*"
+
+functions:
+  cronjob-admin-noti-sfinpay:
+    handler: action/cronjob-sfinpay-handler.callBackAdminNotification
+    name: cronjob-admin-noti-sfinpay-${env:STAGE}
+    description: 'Job time 24:00 : cronjob cancel expire Sfinpay'
+    memorySize: 4096
+    timeout: 900
+    disableLogs: false
+    tags:
+      Name: cronjob-admin-noti-sfinpay
+      Project: NexterNpayLambda
+      Environment: ${env:ENVIROMENT}
+    events:
+      - schedule:
+          rate: cron(0 17 * * ? *) #GMT +7.00

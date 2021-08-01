@@ -1,0 +1,6 @@
+node_modules
+.idea
+.serverless
+storage/key/*
+.env
+package-lock.json

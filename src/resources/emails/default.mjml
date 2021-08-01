@@ -1,0 +1,36 @@
+<mjml>
+  <mj-body>
+    <mj-section padding="15px 0 0">
+      <mj-column>
+        <mj-table>
+          <tr>
+            <td style="width: 50px; padding: 0;">
+              <img width="35px" align="left" alt="nexterlogo" src="https://azecomsa99.blob.core.windows.net/fins/production/logo/nexterlogo.png" />
+            </td>
+            <td style="font-size: 18px;">
+              SFINPAY
+            </td>
+          </tr>
+        </mj-table>
+      </mj-column>
+    </mj-section>
+    <mj-section padding="0">
+      <mj-column>
+        <mj-divider border-color="#C3131B" border-width="2px"></mj-divider>
+      </mj-column>
+    </mj-section>
+    <mj-section padding="0">
+      <mj-column>
+        <mj-text font-size="16px">Dear Business & System user,</mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section>
+      <mj-column>
+         <mj-text font-size="16px">If you are not SFinPay Business&System user,  please contact SFinPay Customer Support at</mj-text>
+         <mj-text font-size="16px">Email : {{systemEmail}}  </mj-text>
+         <mj-text font-size="16px">Thank you,</mj-text>
+        <mj-text font-size="16px">SFinPay system</mj-text>
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>
