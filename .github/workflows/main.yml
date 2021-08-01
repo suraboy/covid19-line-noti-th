@@ -46,6 +46,7 @@ jobs:
           ${{ secrets.ENV }}
           EOF
       - name: configure secrets env
+        run: echo "Tags are > ${PUSH_TAG_VERSION}"
         env:
           LINE_TOKEN: ${{ secrets.LINE_TOKEN }}
       - name: Install NPM dependencies
