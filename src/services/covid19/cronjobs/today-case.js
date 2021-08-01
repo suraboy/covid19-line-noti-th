@@ -2,8 +2,8 @@ const {curlGet} = require("../../../utils/axios");
 const {sysConfig} = require("../../../../config/config");
 /*Setup default data*/
 const endpointConfig = sysConfig.services;
-const endpoint = `${endpointConfig.sfinpay_api}` + `cron/gateway/fee`;
+const endpoint = `${endpointConfig.covid19_api}`;
 
-module.exports.CronGatewayFeeList = async (params, options) => {
+module.exports.getTodayCases = async (params, options) => {
     return await curlGet(endpoint, params, options);
 }

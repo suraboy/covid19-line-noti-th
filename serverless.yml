@@ -40,16 +40,16 @@ provider:
           Resource: "*"
 
 functions:
-  cronjob-admin-noti-sfinpay:
-    handler: action/cronjob-sfinpay-handler.callBackAdminNotification
-    name: cronjob-admin-noti-sfinpay-${env:STAGE}
-    description: 'Job time 24:00 : cronjob cancel expire Sfinpay'
+  covid19-line-notification:
+    handler: action/covid19-handler.covid19TodayCaseNotification
+    name: covid19-line-notification-${env:STAGE}
+    description: 'Job time 24:00 : covid19 push line-notification'
     memorySize: 4096
     timeout: 900
     disableLogs: false
     tags:
-      Name: cronjob-admin-noti-sfinpay
-      Project: NexterNpayLambda
+      Name: covid19-line-notification
+      Project: Covid19Lambda
       Environment: ${env:ENVIROMENT}
     events:
       - schedule:
