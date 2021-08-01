@@ -25,7 +25,7 @@ jobs:
           key: "${{ steps.extract_branch.outputs.branch }}"
           map: |
             {
-              "main": {
+              "master": {
                 "environment": "production"
               },
               ".*": {
