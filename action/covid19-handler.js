@@ -10,7 +10,7 @@ module.exports.covid19TodayCaseNotification = async () => {
 
     if(response.status === 200){
         const params = {
-            message: ' ('+ moment(response.response.updated).tz('Asia/Bangkok').format("DD/MM/YYYY") +')' + '\r\n' + `ผู้ติดเชื้อเพิ่มวันนี้: ` + response.response.todayCases + '\r\n' +
+            message: ' ('+ response.response.UpdateDate +')' + '\r\n' + `ผู้ติดเชื้อเพิ่มวันนี้: ` + response.response.todayCases + '\r\n' +
             `ผู้ป่วยสะสม: ` + response.response.cases + '\r\n' +
             `เสียชีวิต: ` + response.response.deaths + ' (+'+ response.response.todayDeaths + ')'+'\r\n'
         }
