@@ -1,13 +1,13 @@
-Nexter-npay-lambda
+covid19-lambda
 ======
 
 NOTE
 ----
-Reconcile job by serverless 
+push notification job by serverless 
 
 Application flow pattern:
 ---------------------
-https://github.com/SCGWEDOtech/nexter-npay-lambda.git
+https://github.com/suraboy/covid19-line-noti-th.git
 
 Run for development:
 ---------------------

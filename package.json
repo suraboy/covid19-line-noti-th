@@ -31,7 +31,7 @@
     "line-notify-nodejs": "^1.0.0",
     "mjml": "^4.9.0",
     "moment": "^2.27.0",
-    "moment-timezone": "^0.5.31",
+    "moment-timezone": "^0.5.33",
     "mssql": "^6.3.1",
     "mysql": "^2.18.1",
     "mysql2": "^2.2.5",
