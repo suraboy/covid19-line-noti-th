@@ -1,7 +1,8 @@
 'use strict';
 const {getTodayCases} = require("../src/services/covid19/cronjobs/today-case");
 const {pushLineNotification} = require("../src/utils/line-notification");
-const moment = require('moment-timezone');
+const {sysConfig} = require("../config/config");
+const LineToken = sysConfig.lineNotify.covid_token
 
 module.exports.covid19TodayCaseNotification = async () => {
     const response = await getTodayCases({},{'headers':{
@@ -14,7 +15,7 @@ module.exports.covid19TodayCaseNotification = async () => {
             `ผู้ป่วยสะสม: ` + response.response.cases + '\r\n' +
             `เสียชีวิต: ` + response.response.deaths + ' (+'+ response.response.todayDeaths + ')'+'\r\n'
         }
-        await pushLineNotification(params);
+        await pushLineNotification(params,LineToken);
     }
 
     return response;

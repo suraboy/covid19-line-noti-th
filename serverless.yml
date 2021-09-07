@@ -54,3 +54,17 @@ functions:
     events:
       - schedule:
           rate: cron(45 00 * * ? *) #GMT +7.00
+  lottery-lated-notification:
+    handler: action/lottery-handler.lotteryTodayCaseNotification
+    name: lottery-lated-notification-${env:STAGE}
+    description: 'Job time 08:00AM : covid19 push line-notification'
+    memorySize: 4096
+    timeout: 900
+    disableLogs: false
+    tags:
+      Name: lottery-lated-notification
+      Project: Covid19Lambda
+      Environment: ${env:ENVIROMENT}
+    events:
+      - schedule:
+          rate: cron(45 00 * * ? *) #GMT +7.00

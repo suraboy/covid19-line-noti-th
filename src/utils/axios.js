@@ -16,7 +16,7 @@ module.exports.curlGet = async (endpoint, config) => {
     try {
         return await axios.get(`${endpoint}`, config)
             .then(function (response) {
-                console.log(JSON.stringify(response.data))
+                // console.log(JSON.stringify(response.data))
                 let res = {
                     'status': response.status,
                     'response': response.data
@@ -24,7 +24,7 @@ module.exports.curlGet = async (endpoint, config) => {
                 return res;
             })
             .catch(function (error) {
-                console.log(error.response.data)
+                // console.log(error.response.data)
                 let res = {
                     'status': error.response.status,
                     'response': error.response.data
