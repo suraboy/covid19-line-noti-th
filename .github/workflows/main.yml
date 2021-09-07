@@ -48,7 +48,8 @@ jobs:
       - name: configure secrets env
         run: echo "Tags are > ${PUSH_TAG_VERSION}"
         env:
-          LINE_TOKEN: ${{ secrets.LINE_TOKEN }}
+          COVID_LINE_TOKEN: ${{ secrets.COVID_LINE_TOKEN }}
+          LOTTERY_LINE_TOKEN: ${{ secrets.LOTTERY_LINE_TOKEN }}
       - name: Install NPM dependencies
         run: npm install
       - name: Deploy Lambda functions
