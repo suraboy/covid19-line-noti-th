@@ -16,7 +16,6 @@ frameworkVersion: '2'
 useDotenv: true
 plugins:
   - serverless-dotenv-plugin
-
 provider:
   name: aws
   runtime: nodejs12.x
@@ -43,7 +42,7 @@ functions:
   covid19-line-notification:
     handler: action/covid19-handler.covid19TodayCaseNotification
     name: covid19-line-notification-${env:STAGE}
-    description: 'Job time 10:00AM : covid19 push line-notification'
+    description: 'Job time 10:30AM : covid19 push line-notification'
     memorySize: 4096
     timeout: 900
     disableLogs: false
@@ -53,7 +52,7 @@ functions:
       Environment: ${env:ENVIROMENT}
     events:
       - schedule:
-          rate: cron(00 03 * * ? *) #GMT +7.00
+          rate: cron(30 03 * * ? *) #GMT +7.00
   lottery-lated-notification:
     handler: action/lottery-handler.lotteryTodayCaseNotification
     name: lottery-lated-notification-${env:STAGE}
@@ -68,3 +67,17 @@ functions:
     events:
       - schedule:
           rate: cron(00 09 * * ? *) #GMT +7.00
+  sawaddee-today-notification:
+    handler: action/sawaddee-handler.sawaddeeTodayNotification
+    name: sawaddee-today-notification-${env:STAGE}
+    description: 'Job time 8:00AM : sawaddee push images line-notification'
+    memorySize: 4096
+    timeout: 900
+    disableLogs: false
+    tags:
+      Name: sawaddee-today-notification
+      Project: Covid19Lambda
+      Environment: ${env:ENVIROMENT}
+    events:
+      - schedule:
+          rate: cron(00 01 * * ? *) #GMT +7.00

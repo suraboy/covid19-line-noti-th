@@ -7,6 +7,8 @@ module.exports.sysConfig = {
     },
     lineNotify: {
         covid_token: process.env.COVID_LINE_TOKEN,
-        lottery_token: process.env.LOTTERY_LINE_TOKEN
+        lottery_token: process.env.LOTTERY_LINE_TOKEN,
+        sawaddee_token: process.env.SAWADDEE_LINE_TOKEN,
+
     }
 }
