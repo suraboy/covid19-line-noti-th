@@ -2,14 +2,14 @@
 const {curlPost} = require("../src/utils/axios");
 const {sysConfig} = require("../config/config");
 const LineToken = sysConfig.lineNotify.sawaddee_token
+const moment = require('moment-timezone');
 const querystring = require('querystring');
 const date = [
     'sunday', 'monday', 'tuesday', 'wednesday', 'thusday', 'friday', 'saturday'
 ]
 module.exports.sawaddeeTodayNotification = async () => {
 
-    const now = new Date();
-    const n = now.getDay();
+    const n = moment().tz('Asia/Bangkok').format('d')
 
     const config = {
         'headers': {
