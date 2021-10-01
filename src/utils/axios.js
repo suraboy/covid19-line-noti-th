@@ -39,7 +39,6 @@ module.exports.curlPost = async (endpoint, data, config) => {
     try {
         return await axios.post(`${endpoint}`, data, config)
             .then(function (response) {
-                console.log(response)
                 return response;
             })
             .catch(function (error) {

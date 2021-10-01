@@ -23,8 +23,10 @@ module.exports.sawaddeeTodayNotification = async () => {
         imageThumbnail: 'https://patzy-official-api.herokuapp.com/' + date[n] + '.jpg',
         imageFullsize: 'https://patzy-official-api.herokuapp.com/' + date[n] + '.jpg',
     })
-    return await curlPost(
+    await curlPost(
         'https://notify-api.line.me/api/notify',
         params,
         config);
+
+    return true;
 }
