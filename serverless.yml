@@ -94,7 +94,7 @@ functions:
       Environment: ${env:ENVIROMENT}
     events:
       - schedule:
-          rate: cron(*/5 * * * *) #GMT +7.00
+          rate: cron(5 * * * *) #GMT +7.00
   check-cws-today-notification:
     handler: action/crypto-currency-handler.CryptoCurrencyTodayNotification
     name: check-cws-today-notification-${env:STAGE}
