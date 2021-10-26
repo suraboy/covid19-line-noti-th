@@ -1,13 +1,6 @@
 const axios = require('axios');
 
 module.exports.curlGet = async (endpoint, config) => {
-    // axiosRetry(axios, { retries: 3 });
-    config = {
-        headers: {
-            "Content-Type": "application/json",
-        },
-    };
-
     axios.defaults.headers.common = {
         "api-key": "unahTSe5GmOX2DvuKknMF0cbCSlhz1VM",
     };

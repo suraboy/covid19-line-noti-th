@@ -81,3 +81,37 @@ functions:
     events:
       - schedule:
           rate: cron(00 01 * * ? *) #GMT +7.00
+  check-eth-btc-notification:
+    handler: action/crypto-currency-handler.CryptoCurrencyNotification
+    name: check-eth-btc-notification-${env:STAGE}
+    description: 'Job time At every 5th minute. : check btc and eth line-notification'
+    memorySize: 4096
+    timeout: 900
+    disableLogs: false
+    tags:
+      Name: check-eth-btc-notification
+      Project: Covid19Lambda
+      Environment: ${env:ENVIROMENT}
+    events:
+      - schedule:
+          rate: cron(*/5 * * * *) #GMT +7.00
+  check-cws-today-notification:
+    handler: action/crypto-currency-handler.CryptoCurrencyTodayNotification
+    name: check-cws-today-notification-${env:STAGE}
+    description: 'Job time : check crypto currency line-notification'
+    memorySize: 4096
+    timeout: 900
+    disableLogs: false
+    tags:
+      Name: check-cws-today-notification
+      Project: Covid19Lambda
+      Environment: ${env:ENVIROMENT}
+    events:
+      - schedule:
+          rate: cron(0 2 * * ? *) #GMT +7.00
+      - schedule:
+          rate: cron(0 5 * * ? *) #GMT +7.00
+      - schedule:
+          rate: cron(0 12 * * ? *) #GMT +7.00
+      - schedule:
+          rate: cron(0 16 * * ? *) #GMT +7.00

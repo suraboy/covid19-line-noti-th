@@ -4,6 +4,7 @@ module.exports.sysConfig = {
     services: {
         covid19_api: process.env.COVID19_API,
         lottery_api: process.env.THAI_LOTTERY_API,
+        crypto_api: process.env.COIN_MARKET_API,
     },
     lineNotify: {
         covid_token: process.env.COVID_LINE_TOKEN,
