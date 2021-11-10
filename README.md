@@ -42,3 +42,9 @@ Deploy Development
 sls deploy --env development --state development
 ```
 
+Clear AWS
+------------------------------------
+```bash
+sls remove -s {{env}} 
+```
+
