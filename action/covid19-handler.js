@@ -34,7 +34,7 @@ module.exports.covid19SongkhlaTodayCaseNotification = async () => {
         });
 
         const params = {
-            message: 'สงขลา (' + moment(data[0].txn_date).format('DD-MM-yyyy') + ')' + '\r\n' + `ผู้ติดเชื้อเพิ่มวันนี้: ` + data[0].new_case + '\r\n' +
+            message: 'สงขลาวันนี้ (' + moment(data[0].txn_date).format('DD-MM-yyyy') + ')' + '\r\n' + `ผู้ติดเชื้อเพิ่มวันนี้: ` + data[0].new_case + '\r\n' +
                 `ผู้ป่วยสะสม: ` + data[0].total_case + '\r\n' +
                 `เสียชีวิต: ` + data[0].total_death + ' (+' + data[0].new_death + ')' + '\r\n'
         }
