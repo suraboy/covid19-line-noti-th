@@ -1,5 +1,5 @@
 'use strict';
-const {getTodayCases,getSongkhlaTodayCases} = require("../src/services/covid19/cronjobs/today-case");
+const {getTodayCases, getSongkhlaTodayCases} = require("../src/services/covid19/cronjobs/today-case");
 const {pushLineNotification} = require("../src/utils/line-notification");
 const {sysConfig} = require("../config/config");
 const LineToken = sysConfig.lineNotify.covid_token
@@ -15,7 +15,7 @@ module.exports.covid19TodayCaseNotification = async () => {
 
     if (response.status === 200) {
         const params = {
-            message: 'ทั่วประเทศ (' + response.response.UpdateDate + ')' + '\r\n' + `ผู้ติดเชื้อเพิ่มวันนี้: ` + response.response.todayCases + '\r\n' +
+            message: '\r\n' + 'ทั่วประเทศ (' + response.response.UpdateDate + ')' + '\r\n' + `ผู้ติดเชื้อเพิ่มวันนี้: ` + response.response.todayCases + '\r\n' +
                 `ผู้ป่วยสะสม: ` + response.response.cases + '\r\n' +
                 `เสียชีวิต: ` + response.response.deaths + ' (+' + response.response.todayDeaths + ')' + '\r\n'
         }
@@ -34,7 +34,7 @@ module.exports.covid19SongkhlaTodayCaseNotification = async () => {
         });
 
         const params = {
-            message: 'สงขลาวันนี้ (' + moment(data[0].txn_date).format('DD-MM-yyyy') + ')' + '\r\n' + `ผู้ติดเชื้อเพิ่มวันนี้: ` + data[0].new_case + '\r\n' +
+            message: '\r\n' + 'สงขลา (' + moment(data[0].txn_date).format('DD/MM/yyyy hh:mm') + ')' + '\r\n' + `ผู้ติดเชื้อเพิ่มวันนี้: ` + data[0].new_case + '\r\n' +
                 `ผู้ป่วยสะสม: ` + data[0].total_case + '\r\n' +
                 `เสียชีวิต: ` + data[0].total_death + ' (+' + data[0].new_death + ')' + '\r\n'
         }
