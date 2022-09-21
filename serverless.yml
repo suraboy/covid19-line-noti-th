@@ -129,3 +129,18 @@ functions:
           rate: cron(0 12 * * ? *) #GMT +7.00
       - schedule:
           rate: cron(0 16 * * ? *) #GMT +7.00
+  view-facebook-pages:
+    handler: action/facebook-page-handler.callFacebookPage
+    name: view-facebook-pages-${env:STAGE}
+    description: 'Job time At every 5th minute. : view-facebook-pages'
+    memorySize: 4096
+    timeout: 900
+    disableLogs: false
+    tags:
+      Name: view-facebook-pages
+      Project: Covid19Lambda
+      Environment: ${env:ENVIROMENT}
+    events:
+      - schedule:
+          rate: cron(5 0 * * ? *) #GMT +7.00
+
