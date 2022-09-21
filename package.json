@@ -1,6 +1,6 @@
 {
   "name": "covid19-lambda",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -15,11 +15,11 @@
   "dependencies": {
     "@fast-csv/format": "^4.3.1",
     "@fast-csv/parse": "^4.3.1",
-    "@sendgrid/mail": "^7.6.0",
+    "@sendgrid/mail": "^7.7.0",
     "aws-cli": "0.0.2",
-    "aws-sdk": "^2.1025.0",
+    "aws-sdk": "^2.1220.0",
     "axios": "^0.21.4",
-    "axios-retry": "^3.2.4",
+    "axios-retry": "^3.3.1",
     "convert-excel-to-json": "^1.7.0",
     "csvtojson": "^2.0.10",
     "dotenv": "^8.2.0",
@@ -27,27 +27,27 @@
     "handlebars": "^4.7.7",
     "http": "0.0.1-security",
     "iconv-lite": "^0.6.2",
-    "json2csv": "^5.0.1",
-    "line-notify-nodejs": "^1.0.0",
-    "mjml": "^4.10.4",
-    "moment": "^2.27.0",
-    "moment-timezone": "^0.5.34",
-    "mssql": "^6.3.1",
+    "json2csv": "^5.0.7",
+    "line-notify-nodejs": "^1.0.1",
+    "mjml": "^4.13.0",
+    "moment": "^2.29.4",
+    "moment-timezone": "^0.5.37",
+    "mssql": "^6.4.1",
     "mysql": "^2.18.1",
-    "mysql2": "^2.3.2",
+    "mysql2": "^2.3.3",
     "openpgp": "^4.10.9",
     "pad-left": "^2.1.0",
     "path": "^0.12.7",
     "pino": "^5.11.1",
     "pino-pretty": "^2.5.0",
     "repeat-string": "^1.6.1",
-    "sequelize": "^5.16.0",
-    "serverless": "^2.66.1",
+    "sequelize": "^5.22.5",
+    "serverless": "^2.72.3",
     "simple-backoff": "^1.1.0",
     "ssh2-sftp-client": "^5.3.1",
-    "underscore": "^1.9.1"
+    "underscore": "^1.13.4"
   },
   "devDependencies": {
-    "serverless-dotenv-plugin": "^3.10.0"
+    "serverless-dotenv-plugin": "^3.12.2"
   }
 }
