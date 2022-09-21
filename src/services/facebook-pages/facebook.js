@@ -1,4 +1,4 @@
-const {curlGet} = require("../../../utils/axios");
+const {curlGet} = require("../../utils/axios");
 
 module.exports.getCalPlusFarm = async (params, options) => {
     const endpoint = `https://www.facebook.com/pdkfarm`;
